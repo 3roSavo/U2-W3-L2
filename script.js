@@ -13,7 +13,6 @@ class Names {
 }
 
 
-
 const saveName = () => {
     const inputValue = inputReference.value
     const newName = new Names(inputValue)
@@ -73,7 +72,6 @@ const saveName = () => {
 }
 
 
-
 const removeName = () => {
     const getMemory = localStorage.getItem(namesArray)
     const arrayFromStringhyMemory = JSON.parse(getMemory)
@@ -84,7 +82,19 @@ lastLi.remove()
 }
 
 
+let n = 0
+const timeBox = document.createElement("span")
+timeBox.style.fontWeight = "bold"
+list.appendChild(timeBox)
 
+
+const booh = () => {
+    n += 1
+    timeBox.innerText = `Sono passati ${n} secondi`
+}
+
+
+setInterval(booh,1000)
 
 saveButtonReference.addEventListener("click", saveName)
 removeButtonReference.addEventListener("click", removeName)
